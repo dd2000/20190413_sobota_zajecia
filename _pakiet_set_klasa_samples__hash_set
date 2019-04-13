@@ -3,3 +3,6 @@ podpakiet SamplesJava
 - przykłady dla tablic hashowanych
 
 pakiet inner - klasy wewnętrzne
+
+pakiet logging - tworzenie i wykorzystanie logów aplikacji
+Folder resources zawiera plik logback.xml stanowiący konfiguracje logów aplikacji.

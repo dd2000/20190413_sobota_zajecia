@@ -14,13 +14,13 @@ public class Samples {
 
     public static void main(String[] args) {
         //#1 proste użycie Loggera
-        basics();
+        //basics();
 
         //#2 typowe logowanie w kodzie
         //logsFromObjects();
 
         //#3 logowanie w programie wielowątkowym
-        //multiThreadedLogsFromObjects();
+        multiThreadedLogsFromObjects();
     }
 
     private static void basics() {
