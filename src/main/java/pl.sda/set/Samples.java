@@ -9,8 +9,8 @@ import java.util.function.Predicate;
 public class Samples {
     public static void main(String[] args) {
         //#1
-        //deklaracja, inicjalizacja i podstawowe operacje na setacb
-        setBasics();
+        //deklaracja, inicjalizacja i podstawowe operacje na setach
+        //setBasics();
 
         //#2
         //użycie equals i hashCode
@@ -22,7 +22,7 @@ public class Samples {
 
         //#4
         //użycie TreeSet
-        //treeSet();
+        treeSet();
     }
 
     private static void setBasics() {

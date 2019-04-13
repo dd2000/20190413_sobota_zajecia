@@ -12,7 +12,7 @@ public class Sample {
         basicsSamples();
 
         //#2
-        //carsContainer();
+        carsContainer();
     }
 
     private static void basicsSamples() {

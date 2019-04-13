@@ -13,14 +13,22 @@ public class Tasks {
 
         //#2
         //setOfCars();
+        Car car1 = new Car("02837592","Toyota","red");
+        Car car2 = new Car("02837592","Toyota","white");// gdy zdublowany win, nie wyświetli się
+        Car car3 = new Car("0mv0938","Toyota","red");
+        setOfCars(car1, car2, car3);
+
+
 
         //#3
-        /*NavigableSet<Citizen> citizens = treeSetOfCitizens(new Citizen("Maria", "Bobek", "1"), new Citizen("Adam", "Nowak", "2"),
+        /* */
+        NavigableSet<Citizen> citizens = treeSetOfCitizens(new Citizen("Maria", "Bobek", "1"), new Citizen("Adam", "Nowak", "2"),
                 new Citizen("Jan", "Kowalski", "3"), new Citizen("Anna", "Kowalska", "4"),
                 new Citizen("Mirek", "Nowak", "5"), new Citizen("Edward", "Kania", "6"),
                 new Citizen("Zenon", "Jeleń", "7"), new Citizen("Zuzanna", "Lazur", "8")
         );
-        citizens.forEach(System.out::println);*/
+        //citizens.forEach(System.out.println); ??? bład w składni??
+        /* */
 
         //#4
         /*Set<String> names = citizens.stream()
@@ -31,18 +39,30 @@ public class Tasks {
     }
 
     /**
-     * 1. Stwórz kolekcję typu HashSet obiektów typu Citizen. Dodaj w klasie Citizen odpowiednie metody które zapewnią unikalność obiektów tej klasy
+     * 1. Stwórz kolekcję typu HashSet obiektów typu Citizen. Dodaj w klasie Citizen odpowiednie metody,
+     *    które zapewnią unikalność obiektów tej klasy.
      *    Dodaj do kolekcji obiekty przekazane w metodzie i wypisz zawartość set-a na ekran.
      */
     private static void setOfCitizens(Citizen... citizens) {
+        Set<Citizen> citizenSet = new HashSet<>();
+        for (Citizen citizen : citizens) {
+            citizenSet.add(citizen);    // Alt+Enter --> replace  zmieni kod na krótszy
+            // lub: citizenSet.addAll(Arrays.asList(citizens));
+
+        }
     }
 
     /**
      * 2. Stwórz klasę Car zawierającą kilka pól opisujących własności samochodu.
-     * Dodaj metody: equals(), hashCode() - zastanów się jakie pole może posłużyć do sprawdzenia czy dwa obiekty klasy Car reprezentują ten sam samochód?
-     * Dodaj do kolekcji HashSet kilka obiektów klasy Car - również duplikaty i sprawdź czy w kolekcji nie ma duplikatów.
+     * Dodaj metody: equals(), hashCode() - zastanów się jakie pole może posłużyć do sprawdzenia,
+     * czy dwa obiekty klasy Car reprezentują ten sam samochód?
+     * Dodaj do kolekcji HashSet kilka obiektów klasy Car - również duplikaty i sprawdź,
+     * czy w kolekcji nie ma duplikatów.
      */
-    private static void setOfCars() {
+    private static void setOfCars(Car... cars) {
+        Set<Car> carSet = new HashSet<>();
+        carSet.addAll(Arrays.asList(cars));
+        System.out.println(carSet);
     }
 
     /**

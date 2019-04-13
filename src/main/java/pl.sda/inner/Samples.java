@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class Samples {
     public static void main(String[] args) {
@@ -50,9 +51,36 @@ public class Samples {
         products.sort(nestedComparator);
         System.out.println("products(nestedComparator) = " + products);
 
-        //lambda
+        //lambda   --> sortowanie rosnące
         Comparator<Product> lambdaComparator = (o1, o2) -> o1.getName().compareTo(o2.getName());
         products.sort(lambdaComparator);
         System.out.println("products(lambdaComparator) = " + products);
+
+        //lambda2   --> sortowanie malejące - jeszcze nie wykonane
+        Comparator<Product> lambdaComparator2 = (o1, o2) -> -o1.getName().compareTo(o2.getName());
+        products.sort(lambdaComparator2);
+        System.out.println("products(lambdaComparator2) = " + products);
+
+        // wpierwszej kolejności po długości stringu, w drugiej kolejności po identyfikatorze
+        Comparator<Product> lambdaComparator3 = (o1, o2) -> {
+            if (o1.getName().length() != o2.getName().length())
+                return o1.getName().length() - o2.getName().length();
+
+            return (o1.getId() - o2.getId());
+        };
+
+
+        products.sort(lambdaComparator2);
+        System.out.println("products(lambdaComparator2) = " + products);
+
+        products.sort(lambdaComparator3);
+        System.out.println("products(lambdaComparator3) = " + products);
+
+        Consumer<Product> consumer = product1 -> {
+            if (product1.getName().length()<=4);
+            System.out.println(product1);
+        };
+        products.forEach(consumer);
+
     }
 }
